@@ -1,4 +1,3 @@
-# Sajast-Nullini
 <h1><strong>Sajast-Nullini</h1></strong>
 <h3><strong>Peatumisteekonna õppemäng</h3></strong>
 
