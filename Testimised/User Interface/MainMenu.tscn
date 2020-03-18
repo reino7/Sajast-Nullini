@@ -1,0 +1,126 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scale.png" type="Texture" id=1]
+[ext_resource path="res://btnMangima.png" type="Texture" id=2]
+[ext_resource path="res://btnSeaded.png" type="Texture" id=3]
+[ext_resource path="res://HK-est.svg" type="Texture" id=4]
+[ext_resource path="res://maantee_vapp_est_78px.png" type="Texture" id=5]
+[ext_resource path="res://btnJuhend.png" type="Texture" id=6]
+[ext_resource path="res://MainMenu.gd" type="Script" id=7]
+
+[node name="MainMenu" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -4.45981
+margin_top = 2.22989
+margin_right = -4.45984
+margin_bottom = 2.22986
+custom_constants/margin_right = 50
+custom_constants/margin_top = 50
+custom_constants/margin_left = 50
+custom_constants/margin_bottom = 50
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 974.0
+margin_bottom = 564.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_right = 241.0
+margin_bottom = 514.0
+
+[node name="logoMNT" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
+margin_right = 241.0
+margin_bottom = 80.0
+texture = ExtResource( 5 )
+
+[node name="logoHK" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
+margin_top = 84.0
+margin_right = 241.0
+margin_bottom = 148.0
+texture = ExtResource( 4 )
+
+[node name="MenuOptions" type="VBoxContainer" parent="HBoxContainer/VBoxContainer"]
+margin_top = 152.0
+margin_right = 241.0
+margin_bottom = 514.0
+size_flags_vertical = 3
+alignment = 1
+
+[node name="btnJuhend" type="Button" parent="HBoxContainer/VBoxContainer/MenuOptions"]
+margin_right = 241.0
+margin_bottom = 118.0
+icon = ExtResource( 6 )
+flat = true
+
+[node name="btnSeaded" type="Button" parent="HBoxContainer/VBoxContainer/MenuOptions"]
+margin_top = 122.0
+margin_right = 241.0
+margin_bottom = 240.0
+icon = ExtResource( 3 )
+flat = true
+
+[node name="btnMangima" type="Button" parent="HBoxContainer/VBoxContainer/MenuOptions"]
+margin_top = 244.0
+margin_right = 241.0
+margin_bottom = 362.0
+icon = ExtResource( 2 )
+flat = true
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer"]
+margin_left = 245.0
+margin_right = 924.0
+margin_bottom = 514.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/CenterContainer"]
+margin_left = 29.0
+margin_top = 173.0
+margin_right = 650.0
+margin_bottom = 340.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/CenterContainer/VBoxContainer"]
+margin_right = 621.0
+margin_bottom = 65.0
+text = "ENNE, KUI ALUSTAD!
+Kas tead, milline on erinevate ja teeolude puhul auto pidurdusteekond?
+Millise hinde oma teadmistele annad?
+Liiguta hinde andmiseks autot:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/CenterContainer/VBoxContainer"]
+margin_top = 69.0
+margin_right = 621.0
+margin_bottom = 167.0
+texture = ExtResource( 1 )
+
+[node name="GridContainer" type="GridContainer" parent="HBoxContainer/CenterContainer"]
+margin_left = 267.0
+margin_top = 467.0
+margin_right = 411.0
+margin_bottom = 420.0
+custom_constants/hseparation = 50
+columns = 2
+
+[node name="btnInfo" type="Button" parent="HBoxContainer/CenterContainer/GridContainer"]
+margin_right = 45.0
+margin_bottom = 20.0
+text = "INFO"
+
+[node name="btnValju" type="Button" parent="HBoxContainer/CenterContainer/GridContainer"]
+margin_left = 95.0
+margin_right = 144.0
+margin_bottom = 20.0
+text = "VÄLJU"
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/MenuOptions/btnJuhend" to="." method="_on_btnJuhend_pressed"]
+[connection signal="pressed" from="HBoxContainer/CenterContainer/GridContainer/btnValju" to="." method="_on_btnValju_pressed"]
